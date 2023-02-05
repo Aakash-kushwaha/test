@@ -4,7 +4,6 @@ import axios from 'axios';
 const FileUpload = () => {
   const [file, setFile] = useState(null);
 
-  let token = JSON.parse(localStorage.getItem("user"))
   const handleChange = (event) => {
     setFile(event.target.files[0]);
   };
@@ -28,25 +27,21 @@ const FileUpload = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    let token = JSON.parse(localStorage.getItem("user"))
     if (!file) {    
       return alert('No file selected');
     }
     const base64 =await convertBase64(file)
     console.log(base64,"base64")
     try {
-      token &&  axios({
-            method: 'post',
-            url: `http://localhost:5000/user/fileupload`,
-            headers:{
-              Authorization:token.token ,
-            
-            },
-            data:{
-                image:base64
-            }
-          })
-      .then((res)=>console.log(res))
-      .catch((err)=>console.log(err))
+      axios.post('http://localhost:5000/user/fileupload', {image:base64},
+      {
+        headers:{
+            Authorization:token && token.token
+        }
+      }).then((res)=>console.log(res,"res"))
+      ;
     } catch (error) {
       console.error(error);
     }

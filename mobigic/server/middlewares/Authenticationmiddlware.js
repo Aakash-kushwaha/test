@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken")
 const authenticationCheck = (req,res,next)=>{
 
     if(!req.headers.authorization){
-        return res.send("please login again")
+        return res.send("please login again, err:  headers not passed")
     }
     const user_token = req.headers["authorization"]
  

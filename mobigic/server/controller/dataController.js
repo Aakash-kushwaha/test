@@ -22,34 +22,34 @@ const randomInt = ()=>{
 
 
 const userFileUpload =async(req,res)=>{
-    const file = req
-    console.log(file,"body_file")
+    const file = req.body.image
+    // console.log(file,"body_file")
     if(!file) return res.status(400).json("File not received")
    
-//  let data =  await  cloudinary.uploader.upload(file,(err, res) => {
-//         if (err) {
-//             console.log(err)
-//         }
-//           return res
-//     })
+ let data =  await  cloudinary.uploader.upload(file,(err, res) => {
+        if (err) {
+            console.log(err)
+        }
+          return res
+    })
     
-//     if(data){
-//         // console.log(data)
-//       let imgCode =  randomInt()
-//         let userFile = new dataModel({
-//             userId:req.body.userId,
-//             imgurl :data.url,
-//             imgCode
-//         })
-//         await userFile.save()
-//         res.status(200).json({
-//            imgurl:data.url,
-//            imgCode
-//         })
-//     }else{
-//         res.status(400).json("invalid request")
-//     }
-res.send("success")
+    if(data){
+        // console.log(data)
+      let imgCode =  randomInt()
+        let userFile = new dataModel({
+            userId:req.body.userId,
+            imgurl :data.url,
+            imgCode
+        })
+        await userFile.save()
+        res.status(200).json({
+           imgurl:data.url,
+           imgCode
+        })
+    }else{
+        res.status(400).json("invalid request")
+    }
+// res.send("success")
 }
 
 

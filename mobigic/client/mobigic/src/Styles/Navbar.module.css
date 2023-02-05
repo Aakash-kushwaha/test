@@ -1,0 +1,27 @@
+
+  
+  
+  .navbarlist {
+    display: flex;
+  
+    justify-content: space-between;
+    
+    /* border: 1px solid black; */
+    list-style: none;
+
+    align-items: center;
+    padding: 20px;
+    background-color: lightgray;
+
+  }
+  
+  .navbaritem {
+    margin-right: 20px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+  }
+  

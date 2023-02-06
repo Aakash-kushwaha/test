@@ -52,7 +52,7 @@ const Home = ({ login, setLogin }) => {
   return (
     <>
       <div>
-        Home page
+       <h2>Home page</h2> 
         <div className={styles.container}>
           {
             imgdata?.map((el, ind) => {

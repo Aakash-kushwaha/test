@@ -22,7 +22,7 @@ function App() {
   }, []);
   return (
     <div className="App">
-      <Navbar login={login} ></Navbar>
+      <Navbar login={login} setLogin={setLogin}></Navbar>
       <Routes>
         <Route path='/' element={<Home login={login}></Home>}></Route>
         <Route path='/upload' element={<FileUpload></FileUpload>}></Route>

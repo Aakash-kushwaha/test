@@ -12,7 +12,7 @@ router.post("/login",userLogin)
 
 router.post("/fileupload",authenticationCheck,userFileUpload)
 router.get("/userdata",authenticationCheck,getUserData)
-router.get("/checkcode",authenticationCheck,checkImgCode)
+router.post("/checkcode",authenticationCheck,checkImgCode)
 
 
 

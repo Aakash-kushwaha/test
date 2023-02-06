@@ -64,15 +64,17 @@ const getUserData =async(req,res)=>{
 }
 
 const checkImgCode =async(req,res)=>{
-    const imgCode = req.query.imgCode
+    const imgCode = req.body.imgCode
+    console.log(imgCode,"imgcode")
     if(!imgCode) return res.status(400).json("Kindly provide Image Code")
 
     const checkCode = await dataModel.findOne({imgCode})
-    if(!checkCode) return res.status(400).json("Not Found")
-    return res.status(200).json({
+    console.log(checkCode,"checkcode")
+    if(checkCode)  return res.status(200).json({
         imgStatus:"varified",
     })
-
+   
+    return res.status(400).json({status:"Not varified"})
 }
 
 

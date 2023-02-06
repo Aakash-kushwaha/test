@@ -62,7 +62,8 @@ const Register = () => {
           onChange={(event) => setPassword(event.target.value)}
         />
       </div>
-      <button type="submit">Submit</button>
+      <div className={styles.submitbttn}> <button type="submit">Submit</button></div>
+     
     </form>
   );
 };

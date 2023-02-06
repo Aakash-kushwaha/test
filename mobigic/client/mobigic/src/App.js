@@ -9,6 +9,7 @@ import Navbar from './components/Navbar';
 import Login from './components/Login';
 import Home from './pages/Home';
 import FileUpload from './pages/Upload';
+import { UserProfile } from './pages/UserProfile';
 
 function App() {
   const [login, setLogin] = React.useState("");
@@ -26,6 +27,7 @@ function App() {
         <Route path='/' element={<Home login={login}></Home>}></Route>
         <Route path='/upload' element={<FileUpload></FileUpload>}></Route>
         <Route path="/register" element={<Register ></Register>} />
+        <Route path="/profile" element={<UserProfile ></UserProfile>} />
         <Route path="/login" element={<Login login={login} setLogin={setLogin}></Login>} />
       </Routes>
     </div>

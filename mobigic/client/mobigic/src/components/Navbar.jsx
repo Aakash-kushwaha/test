@@ -19,9 +19,10 @@ const Navbar = ({login}) => {
         <div className={styles.navbaritem}>
           <Link to="/upload">Upload</Link>
         </div>
-        <div className={styles.navbaritem}>
+        {login?"": <div className={styles.navbaritem}>
           <Link to="/register">Register</Link>
-        </div>
+        </div>}
+       
         {login ? (
           <div className={styles.navbaritem}>
             <Link to="/profile">Welcome  {login}</Link>

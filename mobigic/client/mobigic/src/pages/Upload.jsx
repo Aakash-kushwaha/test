@@ -40,7 +40,7 @@ const FileUpload = () => {
         headers:{
             Authorization:token && token.token
         }
-      }).then((res)=>console.log(res,"res"))
+      }).then((res)=>alert("File has been Uploaded"))
       ;
     } catch (error) {
       console.error(error);

@@ -34,7 +34,7 @@ const FileUpload = () => {
       return alert('No file selected');
     }
     const base64 =await convertBase64(file)
-    console.log(base64,"base64")
+    // console.log(base64,"base64")
     try {
       axios.post('http://localhost:5000/user/fileupload', {image:base64},
       {

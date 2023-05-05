@@ -35,8 +35,9 @@ const Home = ({ login, setLogin }) => {
 
 
   React.useEffect(() => {
+
     let token = JSON.parse(localStorage.getItem("user"))
-    console.log(token, "token")
+    // console.log(token, "token")
     token && axios({
       method: 'get',
       url: `http://localhost:5000/user/userdata`,
@@ -47,7 +48,7 @@ const Home = ({ login, setLogin }) => {
       .then((res) => setImgData(res.data.userData))
       .catch((err) => console.log(err))
   }, [login])
-  console.log(imgdata)
+  console.log(imgdata,"data")
 
   return (
     <>

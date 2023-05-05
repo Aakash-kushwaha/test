@@ -11,8 +11,8 @@ const authenticationCheck = (req,res,next)=>{
         if(err){
             return res.send("invalid credentials")
         }
-        // console.log(decoded,"decoded")
-        
+        console.log(decoded,"decoded")
+        // {}
         // passign the email in req in body
         req.body.userId = decoded._id
         next()
